@@ -29,7 +29,7 @@ class login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tela de Login'),
+        title: const Text('BEM VINDO A FW WINE'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -82,7 +82,7 @@ class registro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BEM VINDO A FW WINE'),
+        title: const Text('registro'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

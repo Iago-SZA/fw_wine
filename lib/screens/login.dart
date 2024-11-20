@@ -68,44 +68,34 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF5F5F5),
-      body: SingleChildScrollView(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+                'assets/images/fundo_login.jpg'), // Caminho da imagem
+            fit: BoxFit.cover, // Ajusta a imagem ao fundo
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: 60),
-              // Logo
-              Center(
-                child: Text(
-                  'INTELIVINO',
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF6200EA),
-                  ),
-                ),
-              ),
-              SizedBox(height: 40),
               // Campo de email
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white
+                      .withOpacity(0.8), // Fundo branco semi-transparente
                   labelText: 'Email',
-                  labelStyle: TextStyle(color: Color(0xFF6200EA)),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xFF6200EA)),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
+                  border: OutlineInputBorder(),
+                  labelStyle:
+                      TextStyle(color: Color(0xFF6A1B9A)), // Cor roxa do texto
                   focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Color(0xFF3700B3), width: 2.0),
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide(
+                        color: Color(0xFF6A1B9A)), // Cor roxa da borda
                   ),
                 ),
                 keyboardType: TextInputType.emailAddress,
@@ -115,45 +105,27 @@ class _LoginState extends State<Login> {
               TextField(
                 controller: _passwordController,
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white
+                      .withOpacity(0.8), // Fundo branco semi-transparente
                   labelText: 'Senha',
-                  labelStyle: TextStyle(color: Color(0xFF6200EA)),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xFF6200EA)),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
+                  border: OutlineInputBorder(),
+                  labelStyle:
+                      TextStyle(color: Color(0xFF6A1B9A)), // Cor roxa do texto
                   focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Color(0xFF3700B3), width: 2.0),
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderSide: BorderSide(
+                        color: Color(0xFF6A1B9A)), // Cor roxa da borda
                   ),
                 ),
                 obscureText: true, // Esconde a senha
               ),
-              SizedBox(height: 24.0),
+              SizedBox(height: 16.0),
               // Botão de Login
               ElevatedButton(
                 onPressed: _login,
+                child: Text('Login'),
                 style: ElevatedButton.styleFrom(
-                  iconColor: Color(0xFF6200EA),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
-                ),
-                child: Text(
-                  'Entrar',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ),
-              SizedBox(height: 24.0),
-              // Texto de rodapé
-              Center(
-                child: Text(
-                  '© INTELIVINO 2024',
-                  style: TextStyle(color: Color(0xFF999999)),
+                  backgroundColor: Color(0xFF6A1B9A), // Cor roxa do botão
                 ),
               ),
             ],
